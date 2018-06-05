@@ -1,6 +1,6 @@
 {
   "name": "next-store",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A Storage toolkit for mobile based on nextjs.",
   "homepage": "https://github.com/smalleast/next-store",
   "author": {
