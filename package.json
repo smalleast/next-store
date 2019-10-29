@@ -22,6 +22,8 @@
     "yargs": "^4.8.1"
   },
   "dependencies": {
+    "lodash": "4.17.13",
+    "lodash.template": "4.5.0",
     "next-js-core2": "github:smalleast/next-js-core2"
   }
 }
