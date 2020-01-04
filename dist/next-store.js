@@ -1,11 +1,10 @@
 /**
  * Created by dcpai on 2017/7/4.
  */
-(function () {
+(function() {
   var global = window || this;
-  var ENGIE_LOCAL = 'localStorage';
-  var ENGIE_SESSION = 'sessionStorage';
-  var nx = global.nx || require('next-js-core2');
+  var ENGIE_LOCAL = "localStorage";
+  var ENGIE_SESSION = "sessionStorage";
   var Store = {
     engine: ENGIE_LOCAL,
     set local(str) {
@@ -24,22 +23,23 @@
       this.engine = ENGIE_SESSION;
       return this.gets();
     },
-    set: function (inKey, inValue) {
-      global[Store.engine].setItem(inKey, nx.stringify(inValue));
+    set: function(inKey, inValue) {
+      global[Store.engine].setItem(inKey, JSON.stringify(inValue));
     },
-    get: function (inKey) {
+    get: function(inKey) {
       var _value = global[Store.engine].getItem(inKey);
-      return nx.parse(_value);
+      return JSON.parse(_value);
     },
-    sets: function (inObject) {
+    sets: function(inObject) {
       for (var inKey in inObject) {
         Store.set(inKey, inObject[inKey]);
       }
     },
-    gets: function (inKeys) {
+    gets: function(inKeys) {
       var result = {};
       var keys = inKeys || [];
-      var i = 0, key;
+      var i = 0,
+        key;
       var storeEngine = global[Store.engine];
       if (keys.length === 0) {
         for (i = 0; i < storeEngine.length; i++) {
@@ -52,20 +52,20 @@
       }
       return result;
     },
-    clear: function (inKey) {
+    clear: function(inKey) {
       global[Store.engine].removeItem(inKey);
     },
-    clearAll: function (inArray) {
+    clearAll: function(inArray) {
       if (Array.isArray(inArray)) {
-        inArray.forEach(function (item) {
+        inArray.forEach(function(item) {
           Store.clear(item);
-        })
+        });
       } else {
         global[Store.engine].clear();
       }
     }
   };
-  if (typeof module !== 'undefined' && module.exports) {
+  if (typeof module !== "undefined" && module.exports) {
     module.exports = Store;
   }
-}());
+})();

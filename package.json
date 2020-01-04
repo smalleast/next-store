@@ -1,6 +1,6 @@
 {
   "name": "next-store",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A Storage toolkit for mobile based on nextjs.",
   "homepage": "https://github.com/smalleast/next-store",
   "author": {
@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "lodash": "4.17.13",
-    "lodash.template": "4.5.0",
-    "next-js-core2": "github:smalleast/next-js-core2"
+    "lodash.template": "4.5.0"
   }
 }
