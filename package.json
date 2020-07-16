@@ -22,7 +22,7 @@
     "yargs": "^4.8.1"
   },
   "dependencies": {
-    "lodash": "4.17.13",
+    "lodash": "4.17.19",
     "lodash.template": "4.5.0"
   }
 }
